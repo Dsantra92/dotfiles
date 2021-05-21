@@ -1,5 +1,5 @@
 
-call plug#begin()
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tyru/open-browser.vim'											| " opens url in browser
 Plug 'tpope/vim-surround'												| " Surrounding ysw)
@@ -58,6 +58,7 @@ source $HOME/.config/nvim/themes/onedark.vim
 :set splitbelow
 :set splitright
 
+
 """""""""""""""""
 "				"
 "	Mappings	"
@@ -70,9 +71,17 @@ source $HOME/.config/nvim/themes/onedark.vim
 :nnoremap <Leader>c caw
 :vnoremap <Leader>y "+y
 :nnoremap <Leader>p "+p
+:nnoremap <silent> <Leader>g :GitGutterBufferToggle<CR>
 :let NERDTreeQuitOnOpen = 1
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
+
+if exists('g:vscode')
+    " VSCode extension
+	:nnoremap <space> <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
+else
+    " ordinary neovim
+endif
