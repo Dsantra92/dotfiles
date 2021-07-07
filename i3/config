@@ -65,8 +65,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Application Shortcuts
 bindsym $mod+F exec thunar
-bindsym $mod+B exec firefox
-bindsym $mod+C exec code
+bindsym $mod+B exec brave-nightly
+bindsym $mod+C exec code-insiders
 bindsym $mod+Z exec xfce4-settings-manager
 bindsym $mod+o exec pavucontrol
 bindysm $mod+n exec Joplin 
@@ -170,21 +170,24 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-assign [class="firefox"] 2
+assign [class="brave*"] 2
+assign [class="discord"] 9
+assign [class="slack"] 8
+assign [class="gimp"] 6
+assign [class="kirta"] 6
 for_window [class="^.*"] border pixel 3
 exec_always --no-startup-id picom --experimental-backends
 exec nitrogen --restore
-exec xfsettingsd
 exec_always --no-startup-id  xautolock -time 15 -locker  "i3lock-fancy -n -- scrot -z -o"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock-fancy -n -- scrot -z -o, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend && i3lock-fancy -n -- scrot -z -o, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate && i3lock-fancy -n -- scrot -z -o, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym s exec --no-startup-id suspend && i3lock-fancy -n -- scrot -z -o, mode "default"
+    bindsym h exec --no-startup-id hibernate && i3lock-fancy -n -- scrot -z -o, mode "default"
+    bindsym r exec --no-startup-id reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
