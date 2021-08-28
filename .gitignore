@@ -1,7 +1,2 @@
-/nvim/plugged/
+/nvim/plugin/
 /nvim/.netrwhist
-
-/.xmonad/xmonad.hi
-/.xmonad/xmonad.o
-/.xmonad/xmonad.errors
-/.xmonad/xmonad-x86_64-linux
