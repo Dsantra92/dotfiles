@@ -1,2 +1,4 @@
-/nvim/plugin/
-/nvim/.netrwhist
+nvim/plugin/
+nvim/.netrwhist
+
+kitty/*.save
