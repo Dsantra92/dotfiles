@@ -10,7 +10,12 @@ local map = vim.api.nvim_set_keymap
 --------------
 
 g.mapleader = ';'
-map('n','<Leader>v',':vsplit<CR>',{noremap = true})
+
+-- Splits --
+
+map('n','<Leader>v',':vsplit<CR>',{noremap = true, silent=true})
+map('n','<Leader>s',':split<CR>',{noremap = true, silent=true})
+
 
 -- Tabs --
 
@@ -37,10 +42,13 @@ map('n',	'fl',		'<C-W><C-l>', {noremap = true, silent=true})
 
 map('n',	' ', ':update<CR>', {noremap = true, silent=true})
 
-map('n',	'<Leader>d',	'daw', {noremap = true, silent=true})
-map('n',	'<Leader>c',	'caw', {noremap = true, silent=true})
+-- Registers
 map('v',	'<Leader>y',	'"+y', {noremap = true, silent=true})
 map('n',	'<Leader>p',	'"+p', {noremap = true, silent=true})
+
+-- delete words
+map('n',	'<Leader>d',	'daw', {noremap = true, silent=true})
+map('n',	'<Leader>c',	'caw', {noremap = true, silent=true})
 
 -- Move selected block of text
 map('x',	'K',	":move '<-2<CR>gv=gv", {noremap = true, silent=true})
@@ -57,3 +65,6 @@ map('n', 'J', 'mzJ`z', {noremap = true})
 -- go to previous or next buffer with arrow keys
 map('n', '<Left>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
 map('n', '<Right>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
+
+-- Stop the highlight easily
+map('n','<Leader>h',':nohlsearch<CR>',{noremap = true, silent=true})

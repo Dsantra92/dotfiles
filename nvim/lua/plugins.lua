@@ -1,8 +1,11 @@
 return require('packer').startup(function()
+
   use 'wbthomason/packer.nvim'
 
-  use 'psliwka/vim-smoothie'
   use 'b3nj5m1n/kommentary'
+  use 'karb94/neoscroll.nvim'
+
+  use 'folke/which-key.nvim'
 
   -- To-be configured --
   use 'andymass/vim-matchup'

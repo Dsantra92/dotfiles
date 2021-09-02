@@ -4,3 +4,6 @@ require('setpkg/compe')
 require('setpkg/lspkind')
 require('setpkg/kommentary')
 require('setpkg/bufferline')
+require('setpkg/neoscroll')
+require('setpkg/which-key')
+
