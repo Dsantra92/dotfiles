@@ -17,16 +17,19 @@ map('n','<Leader>v',':vsplit<CR>',{noremap = true, silent=true})
 map('n','<Leader>s',':split<CR>',{noremap = true, silent=true})
 
 
--- Tabs --
+-- Buffers --
 
-map('n',	'<A-1>',	'1gt',{noremap = true, silent=true})
-map('n',	'<A-2>',	'2gt',{noremap = true, silent=true})
-map('n',	'<A-3>',	'3gt',{noremap = true, silent=true})
-map('n',	'<A-4>',	'4gt',{noremap = true, silent=true})
-map('n',	'<A-5>',	'5gt',{noremap = true, silent=true})
-map('n',	'H',		'gT',{noremap = true, silent=true})
-map('n',	'L',		'gt',{noremap = true, silent=true})
-map('n',	'td',		':tabclose<CR>',{noremap = true, silent=true})
+map('n',	'<A-1>',        	':BufferLineGoToBuffer 1<CR>',{noremap = true, silent=true})
+map('n',	'<A-2>',        	':BufferLineGoToBuffer 2<CR>',{noremap = true, silent=true})
+map('n',	'<A-3>',        	':BufferLineGoToBuffer 3<CR>',{noremap = true, silent=true})
+map('n',	'<A-4>',        	':BufferLineGoToBuffer 4<CR>',{noremap = true, silent=true})
+map('n',	'<A-5>',        	':BufferLineGoToBuffer 5<CR>',{noremap = true, silent=true})
+map('n',	'H',	        	':BufferLineCyclePrev<CR>',{noremap = true, silent=true})
+map('n',	'L',	        	':BufferLineCycleNext<CR>',{noremap = true, silent=true})
+map('n',	'gb',	        	':BufferLinePick<CR>',{noremap = true, silent=true})
+map('n',	'<Leader>ld',		':BufferLineCloseLeft<CR>',{noremap = true, silent=true})
+map('n',	'<Leader>rd',		':BufferLineCloseRight<CR>',{noremap = true, silent=true})
+map('n',	'<Leader>d',	        ':BufferLinePickClose<CR>',{noremap = true, silent=true})
 
 -- Splits --
 
@@ -47,8 +50,8 @@ map('v',	'<Leader>y',	'"+y', {noremap = true, silent=true})
 map('n',	'<Leader>p',	'"+p', {noremap = true, silent=true})
 
 -- delete words
-map('n',	'<Leader>d',	'daw', {noremap = true, silent=true})
-map('n',	'<Leader>c',	'caw', {noremap = true, silent=true})
+map('n',	'gd',	        'daw', {noremap = true, silent=true})
+map('n',	'gc',	        'caw', {noremap = true, silent=true})
 
 -- Move selected block of text
 map('x',	'K',	":move '<-2<CR>gv=gv", {noremap = true, silent=true})
@@ -63,8 +66,8 @@ map('v',    '<',    '<gv', {noremap = true, silent=true})
 map('n', 'J', 'mzJ`z', {noremap = true})
 
 -- go to previous or next buffer with arrow keys
-map('n', '<Left>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
-map('n', '<Right>', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
+map('n', 'H', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
+map('n', 'J', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
 
 -- Stop the highlight easily
 map('n','<Leader>h',':nohlsearch<CR>',{noremap = true, silent=true})
