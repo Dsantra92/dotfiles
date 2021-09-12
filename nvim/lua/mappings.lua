@@ -35,7 +35,6 @@ map('n',	'<Leader>d',	        ':BufferLinePickClose<CR>',{noremap = true, silent
 
 map('n',	'<Leader>v',	':vsplit<CR>', {noremap = true, silent=true})
 map('n',	'<Leader>s',	':split<CR>', {noremap = true, silent=true})
-map('n',	'<Leader>t',	':tab split', {noremap = true, silent=true})
 map('n',	'fh',		'<C-W><C-h>', {noremap = true, silent=true})
 map('n',	'fj',		'<C-W><C-j>', {noremap = true, silent=true})
 map('n',	'fk',		'<C-W><C-k>', {noremap = true, silent=true})

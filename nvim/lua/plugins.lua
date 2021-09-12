@@ -20,6 +20,10 @@ return require('packer').startup(function()
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
+  -- Terminal support
+  use {"akinsho/nvim-toggleterm.lua", event="BufRead"}
+
+
   -- Navigation --
   use {
       'kyazdani42/nvim-tree.lua',
@@ -27,13 +31,27 @@ return require('packer').startup(function()
   }
   use {
       'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
+      requires = { 'nvim-lua/plenary.nvim', 
+                   'nvim-lua/popup.nvim', 
+                   'nvim-telescope/telescope-media-files.nvim' }
   }
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- TreeSitter --
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+        requires = {'nvim-treesitter/nvim-treesitter-textobjects',
+                     "windwp/nvim-ts-autotag",
+                     "JoosepAlviste/nvim-ts-context-commentstring"}
+      }
+
+  -- Git --
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
 
   -- Completion --
   use 'neovim/nvim-lspconfig'
