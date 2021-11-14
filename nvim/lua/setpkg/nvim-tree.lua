@@ -1,20 +1,61 @@
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-local g = vim.g
 
-g.nvim_tree_bindings = {
-      { key = "u",        cb = tree_cb("dir_up") },
-      { key = "b",        cb = tree_cb("cd") },
+require'nvim-tree'.setup {
+      disable_netrw       = true,
+      hijack_netrw        = true,
+      open_on_setup       = true,
+      ignore_ft_on_setup  = {},
+      update_to_buf_dir   = {
+        enable = true,
+        auto_open = true,
+      },
+      auto_close          = true,
+      open_on_tab         = false,
+      hijack_cursor       = false,
+      update_cwd          = false,
+      diagnostics         = {
+        enable = true,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        }
+      },
+      update_focused_file = {
+        enable      = false,
+        update_cwd  = false,
+        ignore_list = {}
+      },
+      system_open = {
+        cmd  = nil,
+        args = {}
+      },
+      view = {
+        width = 30,
+        height = 30,
+        side = 'right',
+        auto_resize = true,
+        mappings = {
+          custom_only = false,
+          list = {
+              { key = "u",        cb = tree_cb("dir_up") },
+              { key = "b",        cb = tree_cb("cd") },
+        }
+      },
+      filters = {
+	dotfiles = true,
+	custom = { '.git', 'node_modules', '.cache', '.vscode' }
     }
-
+  }
+}
+local g = vim.g
 --------------
 -- Defaults --
 --------------
-g.nvim_tree_side = 'right'
-g.nvim_tree_ignore = { '.git', 'node_modules', '.cache', '.vscode' }
-g.nvim_tree_auto_close = 1
-g.nvim_tree_highlight_opened_files = 1 
-g.nvim_tree_hijack_cursor = 0
-g.nvim_tree_auto_open = 1
+g.nvim_tree_highlight_opened_files = 2 
+g.nvim_quit_on_open = 1
 
 --------------
 -- Mappings --

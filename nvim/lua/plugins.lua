@@ -59,7 +59,7 @@ return require('packer').startup(function()
   -- Either coq or cmp is to be used. Both provide same completion
   -- use { 'ms-jpq/coq_nvim', branch = 'coq'} -- main one
   -- use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
-  use({
+  --[[ use({
       "hrsh7th/nvim-cmp",
       requires = {
         { "kdheepak/cmp-latex-symbols",
@@ -77,7 +77,7 @@ return require('packer').startup(function()
     })
   use {
     "ray-x/lsp_signature.nvim",
-  }
+  } ]]
 
 end)
 

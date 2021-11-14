@@ -13,9 +13,9 @@ o.splitright = true
 o.shiftwidth = 2
 o.shiftround = true
 o.tabstop = 8
-o.softtabstop = 4
-o.expandtab = true
-o.smarttab = true
+o.softtabstop = 8
+-- o.expandtab = true
+-- o.smarttab = true
 
 o.swapfile = false
 o.undodir = vim.fn.stdpath("cache") .. "/undodir"

@@ -66,7 +66,7 @@ map('n', 'J', 'mzJ`z', {noremap = true})
 
 -- go to previous or next buffer with arrow keys
 map('n', 'H', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true})
-map('n', 'J', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
+map('n', 'L', ':BufferLineCycleNext<CR>', {noremap = true, silent = true})
 
 -- Stop the highlight easily
 map('n','<Leader>h',':nohlsearch<CR>',{noremap = true, silent=true})
