@@ -1,6 +1,0 @@
-require('defaults')
-require('plugins')
--- require('lsp')
-require('themes/dracula')
-require('mappings')
-require('setpkg/init')
