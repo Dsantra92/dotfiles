@@ -1,4 +1,1 @@
-nvim/plugin/
-nvim/.netrwhist
-
-kitty/*.save
+dot_config/nvim/plugin/
