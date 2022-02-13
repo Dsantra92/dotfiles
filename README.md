@@ -1,7 +1,16 @@
 # dotfiles
 
-I am very superstitious about my dotfiles
+I am very superstitious about my dotfiles.
 
-## Current view:
+## Installation
 
-![](/misc/fullscreen/ss_2.png)
+To install the dotfiles in your computer, you need [chezmoi](https://www.chezmoi.io/)
+
+Install the dotfiles using:
+```bash
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply
+```
+
+## Current status
+
+![](misc/current.png)
