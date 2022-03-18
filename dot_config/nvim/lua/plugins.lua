@@ -67,8 +67,12 @@ return require('packer').startup(function()
   -- Either coq or cmp is to be used. Both provide same completion
   use { 'ms-jpq/coq_nvim', branch = 'coq'} -- main one
   use { 'ms-jpq/coq.artifacts', branch= 'artifacts'} -- 9000+ Snippets
-  use 'ms-jpq/coq.thirdparty'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+  }
 
+  use 'ms-jpq/coq.thirdparty'
   --[[ use({
       "hrsh7th/nvim-cmp",
       requires = {

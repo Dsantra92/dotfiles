@@ -39,7 +39,7 @@ exec --no-startup-id xfce4-power-manager
 # exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id setcursor
 exec_always --no-startup-id numlockx on
-# exec blueberry-tray
+exec blueberry-tray
 exec --no-startup-id java -Xmx1024m -jar "/opt/xdman/xdman.jar" -m
 # exec_always --no-startup-id picom --experimental-backends
 exec nitrogen --restore
@@ -98,7 +98,7 @@ bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Scr
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui -c
 
 # change focus
 bindsym $mod+h focus left
@@ -186,6 +186,9 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
+
+bindsym $mod+0 move scratchpad
+bindsym $mod+Shift+0 scratchpad show
 
 bindsym Mod1+1 move workspace to output left
 bindsym Mod1+2 move workspace to output right
